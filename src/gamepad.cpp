@@ -12,6 +12,8 @@
 
 #include "storagemanager.h"
 
+#include "SplitController.h"
+
 // MUST BE DEFINED for mpgs
 uint32_t getMillis() {
 	return to_ms_since_boot(get_absolute_time());
@@ -77,6 +79,7 @@ static XInputReport xinputReport
 static TouchpadData touchpadData;
 static uint8_t last_report_counter = 0;
 
+SplitController* myController = new SplitController(0, 1, i2c0, 400000, 0x17);
 
 static KeyboardReport keyboardReport
 {
@@ -97,6 +100,8 @@ void Gamepad::setup()
 	f2Mask = (GAMEPAD_MASK_A1 | GAMEPAD_MASK_S2);
 
 	const PinMappings& pinMappings = Storage::getInstance().getPinMappings();
+
+	myController = new SplitController(0, 1, i2c0, 400000, 0x17);
 
 	const auto convertPin = [](int32_t pin) -> uint8_t { return isValidPin(pin) ? pin : 0xff; };
 	mapDpadUp    = new GamepadButtonMapping(convertPin(pinMappings.pinDpadUp),		GAMEPAD_MASK_UP);
@@ -206,7 +211,10 @@ void Gamepad::process()
 void Gamepad::read()
 {
 	// Need to invert since we're using pullups
-	uint32_t values = ~gpio_get_all();
+	uint32_t masterButtonState = ~gpio_get_all();
+	uint32_t slaveButtonState = ~myController->getSlaveButtonState();
+
+	uint32_t values = masterButtonState | slaveButtonState;
 
 	#ifdef PIN_SETTINGS
 	state.aux = 0

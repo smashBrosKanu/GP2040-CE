@@ -163,6 +163,7 @@ SNESpad
 pico_mbedtls
 TinyUSB_Gamepad
 nanopb
+SplitController
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
