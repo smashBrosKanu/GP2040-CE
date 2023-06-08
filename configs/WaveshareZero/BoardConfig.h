@@ -20,16 +20,16 @@
 #define PIN_DPAD_DOWN   -1          // DOWN
 #define PIN_DPAD_RIGHT  -1          // RIGHT
 #define PIN_DPAD_LEFT   -1         // LEFT
-#define PIN_BUTTON_B1   4           // B1 / A / B / Cross / 2 / K1
-#define PIN_BUTTON_B2   5           // B2 / B / A / Circle / 3 / K2
-#define PIN_BUTTON_R2   -1           // R2 / RT / ZR / R2 / 8 / K3
+#define PIN_BUTTON_B1   29           // B1 / A / B / Cross / 2 / K1
+#define PIN_BUTTON_B2   12           // B2 / B / A / Circle / 3 / K2
+#define PIN_BUTTON_R2   13           // R2 / RT / ZR / R2 / 8 / K3
 #define PIN_BUTTON_L2   -1         // L2 / LT / ZL / L2 / 7 / K4
-#define PIN_BUTTON_B3   8          // B3 / X / Y / Square / 1 / P1
-#define PIN_BUTTON_B4   -1          // B4 / Y / X / Triangle / 4 / 
-#define PIN_BUTTON_R1   -1          // R1 / RB / R / R1 / 6 / P3
-#define PIN_BUTTON_L1   -1          // L1 / LB / L / L1 / 5 / P4
+#define PIN_BUTTON_B3   27         // B3 / X / Y / Square / 1 / P1
+#define PIN_BUTTON_B4   14          // B4 / Y / X / Triangle / 4 / 
+#define PIN_BUTTON_R1   15          // R1 / RB / R / R1 / 6 / P3
+#define PIN_BUTTON_L1   28          // L1 / LB / L / L1 / 5 / P4
 #define PIN_BUTTON_S1   -1          // S1 / Back / Minus / Select / 9 / Coin
-#define PIN_BUTTON_S2   6          // S2 / Start / Plus / Start / 10 / Start
+#define PIN_BUTTON_S2   3         // S2 / Start / Plus / Start / 10 / Start
 #define PIN_BUTTON_L3   -1          // L3 / LS / LS / L3 / 11 / LS
 #define PIN_BUTTON_R3   -1          // R3 / RS / RS / R3 / 12 / RS
 #define PIN_BUTTON_A1   -1          // A1 / Guide / Home / PS / 13 / ~
@@ -219,17 +219,17 @@
 
 // TILTAdd-on Options
 
-#define PIN_TILT_1 7
-#define PIN_TILT_2 -1
+#define PIN_TILT_1 4
+#define PIN_TILT_2 8
 #define PIN_TILT_FUNCTION -1
-#define PIN_TILT_LEFT_ANALOG_UP 2
-#define PIN_TILT_LEFT_ANALOG_DOWN -1
-#define PIN_TILT_LEFT_ANALOG_LEFT -1
-#define PIN_TILT_LEFT_ANALOG_RIGHT 3
-#define PIN_TILT_RIGHT_ANALOG_UP -1
-#define PIN_TILT_RIGHT_ANALOG_DOWN -1
-#define PIN_TILT_RIGHT_ANALOG_LEFT -1
-#define PIN_TILT_RIGHT_ANALOG_RIGHT -1
+#define PIN_TILT_LEFT_ANALOG_UP 17
+#define PIN_TILT_LEFT_ANALOG_DOWN 6
+#define PIN_TILT_LEFT_ANALOG_LEFT 5
+#define PIN_TILT_LEFT_ANALOG_RIGHT 18
+#define PIN_TILT_RIGHT_ANALOG_UP 11
+#define PIN_TILT_RIGHT_ANALOG_DOWN 9
+#define PIN_TILT_RIGHT_ANALOG_LEFT 7
+#define PIN_TILT_RIGHT_ANALOG_RIGHT 10
 #define TILT_SOCD_MODE SOCD_MODE_NEUTRAL
 
 // BOOTSEL Button Add-on setting

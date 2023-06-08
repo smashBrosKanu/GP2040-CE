@@ -79,7 +79,7 @@ static XInputReport xinputReport
 static TouchpadData touchpadData;
 static uint8_t last_report_counter = 0;
 
-SplitController* myController = new SplitController(0, 1, i2c0, 400000, 0x17);
+SplitController* myController = new SplitController(1, 2, i2c0, 400000, 0x17);
 
 static KeyboardReport keyboardReport
 {
@@ -101,7 +101,7 @@ void Gamepad::setup()
 
 	const PinMappings& pinMappings = Storage::getInstance().getPinMappings();
 
-	myController = new SplitController(0, 1, i2c0, 400000, 0x17);
+	myController = new SplitController(1, 2, i2c0, 400000, 0x17);
 
 	const auto convertPin = [](int32_t pin) -> uint8_t { return isValidPin(pin) ? pin : 0xff; };
 	mapDpadUp    = new GamepadButtonMapping(convertPin(pinMappings.pinDpadUp),		GAMEPAD_MASK_UP);
